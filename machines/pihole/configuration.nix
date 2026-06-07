@@ -5,6 +5,7 @@
     [ 
       ./hardware-configuration.nix
       ./pihole.nix
+      ./bonjour.nix
       ./zram-swap.nix
     ];
 
