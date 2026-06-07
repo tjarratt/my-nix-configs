@@ -4,6 +4,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      ./pihole.nix
       ./zram-swap.nix
     ];
 
