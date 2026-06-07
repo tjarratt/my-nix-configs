@@ -41,10 +41,19 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
+      # development
       git
-      unixtools.ifconfig
+      lsof
       tree
       vim
+
+      # perf
+      htop
+      btop
+
+      # networking
+      dnsutils
+      unixtools.ifconfig
     ];
   };
 
