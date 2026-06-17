@@ -3,13 +3,13 @@
   writeShellApplication,
 }:
 let
-  gitPraise = writeShellApplication {
+  praise = writeShellApplication {
     name = "git-praise";
     runtimeInputs = [ pkgs.git ];
     excludeShellChecks = [ "SC2068" ];
     text = "git blame $@";
   };
-  gitArchaeology = writeShellApplication {
+  archaeology = writeShellApplication {
     name = "git-archaeology";
     runtimeInputs = [ pkgs.git ];
     text = ''
@@ -37,7 +37,5 @@ let
   };
 in
 {
-  # TODO: try inherit
-  archaeology = gitArchaeology;
-  praise = gitPraise;
+  inherit archaeology praise;
 }

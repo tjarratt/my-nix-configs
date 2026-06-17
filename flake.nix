@@ -28,7 +28,7 @@
 
           modules = [
 	    ./home.nix
-            # ./cli.nix
+            ./cli.nix
             # ./git.nix
             # ./ssh.nix
             # ./nixvim.nix

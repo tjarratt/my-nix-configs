@@ -24,7 +24,7 @@
       tig
       tldr
       # tree
-      gitPlugins.archaelogy
+      gitPlugins.archaeology
       gitPlugins.praise
     ];
 
