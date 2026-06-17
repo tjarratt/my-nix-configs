@@ -21,7 +21,7 @@
       # nil # language-server for nix
       # pstree
       ripgrep
-      # tig
+      tig
       tldr
       # tree
       gitPlugins.archaelogy
