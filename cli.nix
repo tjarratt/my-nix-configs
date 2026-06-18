@@ -21,7 +21,7 @@
     loginExtra = ''
       # set file descriptor count high ever that we never need to worry again
       # about working in an elixir project with a massive number of tests
-      [[ $(ulimit -n) -lt 1024 ]] && ulimit -n 1024;
+      [[ $(ulimit -n) -lt 2048 ]] && ulimit -n 2048;
     '';
   };
 }
