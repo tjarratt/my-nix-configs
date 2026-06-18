@@ -7,7 +7,7 @@
       hostname = "pihole.local";
       port = 4022;
       extraOptions = {
-        "StrictHostKeyChecking = "no";
+        "StrictHostKeyChecking" = "no";
         "ForwardAgent" = "yes";
       };
     };

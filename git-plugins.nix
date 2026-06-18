@@ -19,7 +19,7 @@ let
         exit 1
       fi
 
-      flags=''${1:-""}
+      flag=''${1:-""}
       case "$flag" in
         "--commit-message")
           git log --grep "$2"

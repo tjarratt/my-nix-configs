@@ -9,10 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,13 +25,18 @@
       homeConfigurations = {
 	tjarratt = home-manager.lib.homeManagerConfiguration {
 	  inherit pkgs;
+          extraSpecialArgs = {
+            inherit nixvim; 
+          };
 
           modules = [
 	    ./home.nix
             ./cli.nix
-            # ./git.nix
-            # ./ssh.nix
-            # ./nixvim.nix
+            ./git.nix
+            ./ssh.nix
+
+            nixvim.homeManagerModules.nixvim 
+            ./nixvim.nix
 	  ];
         };
       };

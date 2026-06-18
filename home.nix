@@ -7,8 +7,6 @@
     in
     {
     packages = with pkgs; [
-      # nixvim.homeModules.nixvim
-
       bat # fancy alternative for cat
       cowsay # moo
       delta # for git diffs

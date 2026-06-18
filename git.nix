@@ -4,9 +4,9 @@
   programs.git = {
     enable = true;
 
-    settings = {
+    extraConfig = {
       core.pager = "${pkgs.delta}/bin/delta";
-      interactive.diffFilter = "${pkgs.delta/bin/delta --color-only";
+      interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
 
       rebase.autostash = true;
 
