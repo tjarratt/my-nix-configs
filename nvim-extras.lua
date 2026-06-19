@@ -56,7 +56,7 @@ local function insert_related()
   end
 
   local annotation = '# @related [' .. label .. '](' .. related_path .. ')'
-  vim.api.nvim_put({ annotation }, 'l', true true)
+  vim.api.nvim_put({ annotation }, 'l', true, true)
 end
 
 vim.keymap.set('n', '<leader>rf', insert_related, { noremap = true, desc = 'Insert @related annotaiton' })
@@ -71,7 +71,7 @@ vim.o.foldmethod = syntax
 vim.o.foldcolumn = '1' -- '0' isn't bad either
 vim.foldlevel = 99
 vim.o.foldlevelstart = 99
-vim.o.foldenable =t rue
+vim.o.foldenable = true
 
 -- ==============================
 --
@@ -129,7 +129,7 @@ require("aerial").setup({
 --
 -- ==============================
 
-require("tardis-nvim").setup){
+require("tardis-nvim").setup({
   keymap = {
     ["next"] = '<C-j>',
     ["prev"] = '<C-k>',
