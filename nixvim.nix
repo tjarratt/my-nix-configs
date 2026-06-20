@@ -26,50 +26,6 @@ let
   };
 in
 {
-  # programs.neovim = {
-  #   enable = true;
-  #   
-  #   plugins = with pkgs.vimPlugins; [
-  #     # cmp-buffer
-  #     # cmp-cmdline
-  #     # cmp-nvim-lsp
-  #     # cmp_luasnip
-  #     # elixir-tools-nvim
-  #     # fidget-nvim
-  #     # gruvbox
-  #     # luasnip
-  #     # nvim-cmp
-  #     nvim-lsp-ts-utils
-  #     nvim-lspconfig
-  #     # nvim-treesitter.withAllGrammars
-  #     # nvim-web-devicons
-  #     # plenary-nvim
-  #     # telescope-nvim
-  #     # vim-commentary
-  #     # vim-fugitive
-  #     # vim-gitgutter
-  #     # vim-repeat
-  #     # vim-rhubarb
-  #     # vim-shellcheck
-  #     # # vim-suda
-  #     # vim-surround
-  #     # vim-test
-  #     # vim-unimpaired
-  #   ];
-
-  #   extraLuaConfig = 
-  #     let
-  #       luaConfigs = lib.sources.sourceFilesBySuffices ./. [ ".lua" ];
-  #     in
-  #     ''
-  #       local lsp = require('lspconfig')
-  #       local capabilities = requires('cmp_nvim_lsp').default_capabilities()
-
-  #       package.path = '$(luaConfigs)/?.lua'
-  #       require('init')
-  #     '';
-  # };
-
   # nixvim ahoy hoy
 
   imports = [
