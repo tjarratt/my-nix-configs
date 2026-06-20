@@ -3,21 +3,21 @@
 let
   milli = pkgs.vimUtils.buildVimPlugin {
     name = "milli-nvim";
-    src = pkgs.fetchFromGithub {
+    src = pkgs.fetchFromGitHub {
       owner = "amansingh-afk";
       repo = "milli.nvim";
       rev = "00274623b76a66356e31e1861360b269987a7f64";
-      hash = "";
+      hash = "sha256-EtrBQH8vzBMUF/Wp7t46sb39RQSPyGZWT+HucPoRxVg";
     };
   };
   
   related-files = pkgs.vimUtils.buildVimPlugin {
     name = "vim-related-files";
-    src = pkgs.fetchFromGithub {
+    src = pkgs.fetchFromGitHub {
       owner = "synchronal";
       repo = "related-files.nvim";
       rev = "14f7123b6081fd77d40519092e18e3b81588dffd";
-      hash = "";
+      hash = "sha256-ztXtSm/PQTaT2woejI6rFfMGouWP/gokIAamTe2AMy4";
     };
     dependencies = with pkgs.vimPlugins; [
       telescope-nvim
@@ -115,8 +115,8 @@ in
     };
 
     extraPlugins = with pkgs.vimPlugins; [
-      # milli
-      # related-files
+      milli
+      related-files
 
       # vim-gnupg
       # vim-repeat
