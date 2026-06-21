@@ -39,3 +39,4 @@ in
 {
   inherit archaeology praise;
 }
+

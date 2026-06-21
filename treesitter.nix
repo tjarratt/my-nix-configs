@@ -45,6 +45,7 @@
   #     nix
   #     passwd
   #     properties
+  #     python
   #     readline
   #     regex
   #     rust
@@ -59,3 +60,4 @@
   #   ];
   # };
 }
+

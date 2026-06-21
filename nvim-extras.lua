@@ -163,3 +163,4 @@ vim.api.nvim_set_keymap('n', '<leader>aw', '<cmd>AerialToggle!<cr>', { noremap =
 -- ==============================
 
 vim.cmd('autocmd BufLeave,FocusLost * silent! update')
+
