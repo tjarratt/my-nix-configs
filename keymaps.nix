@@ -21,102 +21,102 @@
 
     keymaps = [
       {
-        action.__raw = "vim.diagnostic.goto_prev";
+        action = "vim.diagnostic.goto_prev";
         key = "[d";
         options.desc = "Previous diagnostic";
       }
       {
-        action.__raw = "vim.diagnostic.goto_next";
+        action = "vim.diagnostic.goto_next";
         key = "]d";
         options.desc = "Next diagnostic";
       }
       {
-        action.__raw = "!i[sort<cr>";
+        action = "!i[sort<cr>";
         key = "<F5>";
       }
       {
-        action.__raw = ":w<cr>:TestSuite<cr>";
+        action = ":w<cr>:TestSuite<cr>";
         key = "<leader>ts";
         options.desc = "Test entire suite";
       }
       {
-        action.__raw = ":w<cr>:TestLast<cr>";
+        action = ":w<cr>:TestLast<cr>";
         key = "<leader>tr";
         options.desc = "Repeat last test run";
       }
       {
-        action.__raw = ":w<cr>TestNearest<cr>";
+        action = ":w<cr>TestNearest<cr>";
         key = "<leader>tt";
         options.desc = "Test nearest";
       }
       {
-        action.__raw = ":w<cr>TestFile<cr>";
+        action = ":w<cr>TestFile<cr>";
         key = "<leader>tf";
         options.desc = "Test entire file";
       }
       # movement ...
       {
-        action.__raw = "<c-w>h";
+        action = "<c-w>h";
         key = "<c-h>";
       }
       {
-        action.__raw = "<c-w>j";
+        action = "<c-w>j";
         key = "<c-j>";
       }
       {
-        action.__raw = "<c-w>k";
+        action = "<c-w>k";
         key = "<c-k>";
       }
       {
-        action.__raw = "<c-w>l";
+        action = "<c-w>l";
         key = "<c-l>";
       }
       {
-        action.__raw = ":q<cr>";
+        action = ":q<cr>";
         key = "<leader>q";
         options.desc = "Quit buffer";
       }
       {
-        action.__raw = ":nohlsearch<cr>";
+        action = ":nohlsearch<cr>";
         key = "<space>";
       }
       {
-        action.__raw = "<cmd>Telescope find_files<cr>";
+        action = "<cmd>Telescope find_files<cr>";
         key = "<leader>ff";
         options.desc = "Find files";
       }
       {
-        action.__raw = "<cmd>Telescope grep_string<cr>";
+        action = "<cmd>Telescope grep_string<cr>";
         key = "<leader>a";
         options.desc = "Grep string under cursor";
       }
       {
-        action.__raw = "<cmd>Telescope live_grep<cr>";
+        action = "<cmd>Telescope live_grep<cr>";
         key = "<leader>fg";
         options.desc = "Find text or pattern";
       }
       {
-        action.__raw = "<cmd>Telescope buffers<cr>";
+        action = "<cmd>Telescope buffers<cr>";
         key = "<leader>fb";
         options.desc = "Find buffers";
       }
       {
-        action.__raw = "<cmd>Telescope help_tags<cr>";
+        action = "<cmd>Telescope help_tags<cr>";
         key = "<leader>fh";
         options.desc = "Find in help";
       }
       {
-        action.__raw = "<cmd>Telescope oldfiles<cr>";
+        action = "<cmd>Telescope oldfiles<cr>";
         key = "<leader>fo";
         options.desc = "Find recent (old) files";
       }
       {
-        action.__raw = "<cmd>Telescope related_files<cr>";
+        action = "<cmd>Telescope related_files<cr>";
         key = "<leader>fr";
         options.desc = "Find related files";
       }
       {
-        action.__raw = "<cmd>Telescope commands<cr>";
+        action = "<cmd>Telescope commands<cr>";
         key = "<leader>fc";
         options.desc = "Find commands";
       }
