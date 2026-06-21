@@ -30,11 +30,11 @@ in
 
   imports = [
     # ./completion.nix
-    # ./format-on-save.nix
+    ./format-on-save.nix
     # ./keymaps.nix
     # ./lsp.nix
     # ./treesitter.nix
-    # ./vim-test.nix
+    ./vim-test.nix
   ];
 
   programs.nixvim = {
@@ -59,34 +59,32 @@ in
     plugins = {
       # aerial.enable = true;
 
-      # commentary.enable = true;
-      # fidget.enable = true;
-      # fugitive.enable = true;
-      # gitgutter.enable = true;
-      # nvim-surround.enable = true; 
-      # telescope.enable = true;
-      # undotree.enable = true;
-      # web-devicons.enable = true;
-      # which-key.enable = true;
+      commentary.enable = true;
+      fidget.enable = true;
+      fugitive.enable = true;
+      gitgutter.enable = true;
+      nvim-surround.enable = true; 
+      telescope.enable = true;
+      undotree.enable = true;
+      web-devicons.enable = true;
+      which-key.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
       milli
       related-files
 
-      # vim-gnupg
-      # vim-repeat
-      # vim-rhubarb # fugitive extensions: GBrowse opens files in github
-      # vim-unimpaired
+      vim-gnupg
+      vim-repeat
+      vim-rhubarb # fugitive extensions: GBrowse opens files in github
+      vim-unimpaired
 
-      # nvim-ufo
-      # tardis-nvim
-      # tokyonight-nvim
-      # undotree
-      # vim-tmux-navigator
-      # vim-better-whitespace
-      # vim-visual-multi
-      # which-key-nvim
+      nvim-ufo
+      # tardis-nvim # not in nixpkgs at 23.11 ?
+      tokyonight-nvim
+      vim-tmux-navigator
+      vim-better-whitespace
+      vim-visual-multi
       zoxide-vim
     ];
   };
