@@ -24,6 +24,22 @@ let
       plenary-nvim
     ];
   };
+
+  tardis = pkgs.vimUtils.buildVimPlugin {
+    name = "tardis-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "FredeHoey";
+      repo = "tardis.nvim";
+      rev = "f050686a6c299dba95d07990550174c20aba56dd";
+      hash = "sha256-VgVvcnBaWnZ4V5INtIn3ecqffo3EQvzUmxzg05WaVH4";
+    };
+    dependencies = with pkgs.vimPlugins; [
+      telescope-nvim
+      plenary-nvim
+    ];
+  };
+
+
 in
 {
   # nixvim ahoy hoy
@@ -31,7 +47,7 @@ in
   imports = [
     # ./completion.nix
     ./format-on-save.nix
-    # ./keymaps.nix
+    ./keymaps.nix
     # ./lsp.nix
     # ./treesitter.nix
     ./vim-test.nix
@@ -57,16 +73,14 @@ in
     extraConfigLua = builtins.readFile ./nvim-extras.lua;
 
     plugins = {
-      # aerial.enable = true;
-
       commentary.enable = true;
       fidget.enable = true;
       fugitive.enable = true;
       gitgutter.enable = true;
-      nvim-surround.enable = true; 
+      # nvim-surround.enable = true; 
       telescope.enable = true;
       undotree.enable = true;
-      web-devicons.enable = true;
+      # web-devicons.enable = true;
       which-key.enable = true;
     };
 
@@ -74,6 +88,7 @@ in
       milli
       related-files
 
+      aerial-nvim
       vim-gnupg
       vim-repeat
       vim-rhubarb # fugitive extensions: GBrowse opens files in github
@@ -81,6 +96,7 @@ in
 
       nvim-ufo
       # tardis-nvim # not in nixpkgs at 23.11 ?
+      tardis
       tokyonight-nvim
       vim-tmux-navigator
       vim-better-whitespace

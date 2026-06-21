@@ -67,7 +67,7 @@ vim.keymap.set('n', '<leader>rf', insert_related, { noremap = true, desc = 'Inse
 --
 -- ==============================
 
-vim.o.foldmethod = syntax
+vim.o.foldmethod = 'syntax'
 vim.o.foldcolumn = '1' -- '0' isn't bad either
 vim.foldlevel = 99
 vim.o.foldlevelstart = 99
@@ -84,7 +84,7 @@ math.randomseed(os.time())
 local vanilla_dictionary = {}
 local function load_vanilla_dictionary()
   if #vanilla_dictionary == 0 then
-    local file = io.open("/usr/share/dict/words", "r")
+    local file = io:open("/usr/share/dict/words", "r")
     for line in file:lines() do
       table.insert(vanilla_dictionary, line)
     end
