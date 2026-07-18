@@ -6,13 +6,13 @@
 }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ./pihole.nix
-      ./bonjour.nix
-      ./zram-swap.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./pihole.nix
+    ./isponsor-block.nix
+    ./bonjour.nix
+    ./zram-swap.nix
+  ];
 
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
