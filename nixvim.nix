@@ -1,4 +1,9 @@
-{ pkgs, lib, nixvim, ... }:
+{
+  pkgs,
+  lib,
+  nixvim,
+  ...
+}:
 
 let
   milli = pkgs.vimUtils.buildVimPlugin {
@@ -10,7 +15,7 @@ let
       hash = "sha256-EtrBQH8vzBMUF/Wp7t46sb39RQSPyGZWT+HucPoRxVg";
     };
   };
-  
+
   related-files = pkgs.vimUtils.buildVimPlugin {
     name = "vim-related-files";
     src = pkgs.fetchFromGitHub {
@@ -38,7 +43,6 @@ let
       plenary-nvim
     ];
   };
-
 
 in
 {
@@ -77,7 +81,7 @@ in
       fidget.enable = true;
       fugitive.enable = true;
       gitgutter.enable = true;
-      # nvim-surround.enable = true; 
+      # nvim-surround.enable = true;
       telescope.enable = true;
       undotree.enable = true;
       # web-devicons.enable = true;
@@ -105,4 +109,3 @@ in
     ];
   };
 }
-

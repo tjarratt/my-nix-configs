@@ -1,7 +1,8 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   networking.firewall.allowedTCPPorts = [ 80 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
- 
+
   services = {
     pihole-ftl = {
       enable = true;
@@ -16,7 +17,10 @@
 
       settings = {
         # quad9, THEN cloudflare
-        dns.upstreams = [ "9.9.9.9" "1.1.1.1" ];
+        dns.upstreams = [
+          "9.9.9.9"
+          "1.1.1.1"
+        ];
 
         dns.hosts = [ "192.168.0.33 pihole.local" ];
       };

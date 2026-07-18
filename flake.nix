@@ -16,28 +16,34 @@
   };
 
   outputs =
-    { self, home-manager, nixpkgs, nixvim, ... }@inputs:
+    {
+      self,
+      home-manager,
+      nixpkgs,
+      nixvim,
+      ...
+    }@inputs:
     let
       system = "x86_64-darwin";
       pkgs = import nixpkgs { inherit system; };
     in
     {
       homeConfigurations = {
-	tjarratt = home-manager.lib.homeManagerConfiguration {
-	  inherit pkgs;
+        tjarratt = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
           extraSpecialArgs = {
-            inherit nixvim; 
+            inherit nixvim;
           };
 
           modules = [
-	    ./home.nix
+            ./home.nix
             ./cli.nix
             ./git.nix
             ./ssh.nix
 
-            nixvim.homeManagerModules.nixvim 
+            nixvim.homeManagerModules.nixvim
             ./nixvim.nix
-	  ];
+          ];
         };
       };
 
@@ -48,4 +54,3 @@
       };
     };
 }
-

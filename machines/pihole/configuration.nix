@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports =
@@ -15,7 +20,10 @@
   networking.hostName = "pihole"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   time.timeZone = "Europe/Paris";
 
@@ -60,7 +68,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
   ];
 
@@ -107,4 +115,3 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }
-

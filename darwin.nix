@@ -8,11 +8,14 @@
 
   # pihole ahoy hoy
   networking = {
-    knownNetworkServices = [ "Wi-fi" "Thunderbolt Bridge" ];
+    knownNetworkServices = [
+      "Wi-fi"
+      "Thunderbolt Bridge"
+    ];
 
     dns = [
-      "192.168.0.33"  # pihole wired
-      "192.168.0.43"  # pihole wireless
+      "192.168.0.33" # pihole wired
+      "192.168.0.43" # pihole wireless
       "192 168.0.254" # router
     ];
   };
@@ -74,4 +77,3 @@
     wvous-tr-corner = 1; # disabled
   };
 }
-

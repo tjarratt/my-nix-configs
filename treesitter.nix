@@ -49,7 +49,7 @@
   #     readline
   #     regex
   #     rust
-  #     sql 
+  #     sql
   #     ssh-config
   #     toml
   #     typescript
@@ -60,4 +60,3 @@
   #   ];
   # };
 }
-

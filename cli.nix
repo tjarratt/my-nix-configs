@@ -16,7 +16,7 @@
     enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-    defaultKeymap = "emacs"; 
+    defaultKeymap = "emacs";
 
     loginExtra = ''
       # set file descriptor count high ever that we never need to worry again
@@ -25,4 +25,3 @@
     '';
   };
 }
-
