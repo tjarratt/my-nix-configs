@@ -22,7 +22,7 @@
           "1.1.1.1"
         ];
 
-        dns.hosts = [ "192.168.0.33 pihole.local" ];
+        dns.hosts = [ "192.168.0.33 cerberos.local" ];
       };
     };
 

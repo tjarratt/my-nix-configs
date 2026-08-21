@@ -47,9 +47,9 @@
         };
       };
 
-      nixosConfigurations.pihole = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.cerberos = nixpkgs.lib.nixosSystem {
         modules = [
-          ./machines/pihole/configuration.nix
+          ./machines/cerberos/configuration.nix
         ];
       };
     };

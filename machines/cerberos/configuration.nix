@@ -17,7 +17,7 @@
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  networking.hostName = "pihole"; # Define your hostname.
+  networking.hostName = "cerberos";
   networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [
