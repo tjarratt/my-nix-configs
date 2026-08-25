@@ -42,7 +42,7 @@
             ./ssh.nix
 
             nixvim.homeManagerModules.nixvim
-            ./nixvim.nix
+            ./modules/nvim/nixvim.nix
           ];
         };
       };
