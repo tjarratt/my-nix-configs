@@ -46,7 +46,7 @@
       stateVersion = "23.11";
 
       username = "tjarratt";
-      homeDirectory = "/Users/tjarratt";
+      homeDirectory = "/home/tjarratt";
     };
 
   programs = {
