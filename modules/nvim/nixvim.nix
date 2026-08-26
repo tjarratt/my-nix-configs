@@ -49,11 +49,11 @@ in
   # nixvim ahoy hoy
 
   imports = [
-    # ./completion.nix
+    ./completion.nix
     ./format-on-save.nix
     ./keymaps.nix
-    # ./lsp.nix
-    # ./treesitter.nix
+    ./lsp.nix
+    ./treesitter.nix
     ./vim-test.nix
   ];
 
@@ -81,10 +81,10 @@ in
       fidget.enable = true;
       fugitive.enable = true;
       gitgutter.enable = true;
-      # nvim-surround.enable = true;
+      nvim-surround.enable = true;
       telescope.enable = true;
       undotree.enable = true;
-      # web-devicons.enable = true;
+      web-devicons.enable = true;
       which-key.enable = true;
     };
 
@@ -99,7 +99,7 @@ in
       vim-unimpaired
 
       nvim-ufo
-      # tardis-nvim # not in nixpkgs at 23.11 ?
+      tardis-nvim
       tardis
       tokyonight-nvim
       vim-tmux-navigator
