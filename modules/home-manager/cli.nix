@@ -24,4 +24,9 @@
       [[ $(ulimit -n) -lt 2048 ]] && ulimit -n 2048;
     '';
   };
+
+  programs.ghostty = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
