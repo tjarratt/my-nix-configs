@@ -89,6 +89,7 @@
   };
 
   programs.fish.enable = true;
+  programs.ssh.startAgent = true;
 
   # Install firefox.
   programs.firefox.enable = true;
