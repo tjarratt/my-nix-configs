@@ -10,18 +10,18 @@
         bat # fancy alternative for cat
         cowsay # moo
         delta # for git diffs
-        # departure-mono # mono-width terminal font
-        # elixir-ls
-        # erlang_28
-        # elixir_1_20
-        # inetutils
-        # lsof
-        # nil # language-server for nix
-        # pstree
+        departure-mono # mono-width terminal font
+        erlang_28
+        beam28Packages.elixir_1_20
+        beam28Packages.elixir-ls
+        inetutils
+        lsof
+        nil # language-server for nix
+        pstree
         ripgrep
         tig
         tldr
-        # tree
+        tree
         gitPlugins.archaeology
         gitPlugins.praise
       ];
