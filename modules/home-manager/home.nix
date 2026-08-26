@@ -1,4 +1,4 @@
-{ pkgs, nixvim, ... }:
+{ lib, pkgs, nixvim, ... }:
 
 {
   home =
@@ -14,6 +14,7 @@
         erlang_28
         beam28Packages.elixir_1_20
         beam28Packages.elixir-ls
+        file
         inetutils
         lsof
         nil # language-server for nix
@@ -24,6 +25,9 @@
         tree
         gitPlugins.archaeology
         gitPlugins.praise
+
+        obsidian # a note a day ...
+        signal-desktop
       ];
 
       shellAliases = {
@@ -48,6 +52,10 @@
       username = "tjarratt";
       homeDirectory = "/home/tjarratt";
     };
+
+  nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (lib.getName pkg) [
+    "obsidian"
+  ]);
 
   programs = {
     fish.enable = true;
