@@ -26,6 +26,7 @@
         gitPlugins.archaeology
         gitPlugins.praise
 
+        _1password-gui
         obsidian # a note a day ...
         signal-desktop
       ];
@@ -54,6 +55,7 @@
     };
 
   nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (lib.getName pkg) [
+    "1password"
     "obsidian"
   ]);
 
