@@ -18,6 +18,7 @@
 
   # networking
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
@@ -90,12 +91,42 @@
 
   programs.fish.enable = true;
   programs.ssh.startAgent = true;
+  programs.firefox = {
+    enable = true;
 
-  # Install firefox.
-  programs.firefox.enable = true;
+    preferences = {
+      # prefer strict content blocking, even if it breaks some sites
+      "browser.contentblocking.category" = "strict";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+      # ALL HANDS ON DECK, DISABLE THE AI
+      # disable UI-level features
+      "browser.ai.control.default" = "blocked";
+      "browser.ai.control.linkPreviewKeyPoints" = "blocked";
+      "browser.ai.control.pdfjsAltText" = "blocked";
+      "browser.ai.control.sidebarChatbot" = "blocked";
+      "browser.ai.control.smartTabGroups" = "blocked";
+      "browser.ai.control.translations" = "blocked";
+
+      # disable the features themselves
+      "browser.aiwindow.enabled" = false;
+      "browser.ml.chat.enabled" = false;
+      "browser.ml.chat.page" = false;
+      "browser.ml.linkPreview.enabled" = false;
+      "browser.tabs.groups.smart.enabled" = false;
+      "browser.tabs.groups.smart.userEnabled" = false;
+      "browser.translations.enable" = false;
+      "extensions.ml.enabled" = false;
+      "pdfjs.enableAltText" = false;
+
+      # be paranoid about tracking
+      # "Yes, I'm paranoid ... but am I paranoid __enough__ ?"
+      "privacy.donottrackheader.enabled" = true;
+      "privacy.trackingprotection.enabled" = true;
+      "privacy.trackingprotection.socialtracking.enabled" = true;
+      "app.normany.enabled" = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     git
     vim
@@ -109,16 +140,8 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
