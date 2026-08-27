@@ -78,6 +78,8 @@
       };
 
       nixosConfigurations.styx = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
         modules = [
           ./machines/styx/configuration.nix
 
