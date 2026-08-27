@@ -56,6 +56,10 @@
     variant = "";
   };
 
+  # "Natural" scrolling
+  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.libinput.mouse.naturalScrolling = true;
+
   # Enable sound with pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
