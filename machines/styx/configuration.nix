@@ -57,7 +57,7 @@
   };
 
   # "Natural" scrolling
-  services.xserver.libinput.touchpad.naturalScrolling = true;
+  services.libinput.touchpad.naturalScrolling = true;
   services.libinput.mouse.naturalScrolling = true;
 
   # Enable sound with pipewire
