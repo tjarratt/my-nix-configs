@@ -16,9 +16,6 @@
         cowsay # moo
         delta # for git diffs
         departure-mono # mono-width terminal font
-        erlang_28
-        beam28Packages.elixir_1_20
-        beam28Packages.elixir-ls
         file
         inetutils
         lsof
@@ -31,6 +28,15 @@
         tree
         gitPlugins.archaeology
         gitPlugins.praise
+
+        erlang_28
+        beam28Packages.elixir_1_20
+        beam28Packages.elixir-ls
+
+        rustc
+        cargo
+        clang
+        clippy
 
         _1password-gui
         obsidian # a note a day ...
