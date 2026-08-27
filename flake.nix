@@ -9,8 +9,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixflix = {
+      url = "github:kiriwalawren/nixflix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -20,7 +30,9 @@
       self,
       home-manager,
       nixpkgs,
+      nixflix,
       nixvim,
+      sops-nix,
       ...
     }@inputs:
     let
@@ -74,6 +86,9 @@
           { home-manager.users.tjarratt = import ./modules/home-manager/cli.nix; }
           { home-manager.users.tjarratt = import ./modules/home-manager/git.nix; }
           { home-manager.users.tjarratt = import ./modules/home-manager/ssh.nix; }
+
+          sops-nix.nixosModules.sops
+          ./modules/secrets.nix
 
           nixvim.nixosModules.nixvim
           ./modules/nvim/nixvim.nix
