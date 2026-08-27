@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -38,7 +37,10 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable the X11 windowing system
   # You can disable this if you're only using the Wayland session
@@ -77,7 +79,10 @@
   users.users."tjarratt" = {
     isNormalUser = true;
     description = "tjarratt";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
 
     packages = with pkgs; [
       kdePackages.kate

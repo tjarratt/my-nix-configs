@@ -1,4 +1,9 @@
-{ lib, pkgs, nixvim, ... }:
+{
+  lib,
+  pkgs,
+  nixvim,
+  ...
+}:
 
 {
   home =
@@ -55,10 +60,13 @@
       homeDirectory = "/home/tjarratt";
     };
 
-  nixpkgs.config.allowUnfreePredicate = (pkg: builtins.elem (lib.getName pkg) [
-    "1password"
-    "obsidian"
-  ]);
+  nixpkgs.config.allowUnfreePredicate = (
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "1password"
+      "obsidian"
+    ]
+  );
 
   programs = {
     fish.enable = true;

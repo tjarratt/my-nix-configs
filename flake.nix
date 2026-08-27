@@ -24,16 +24,21 @@
       ...
     }@inputs:
     let
-      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "amd64-darwin" ];
+      forAllSystems = nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "amd64-darwin"
+      ];
     in
     {
-      formatter = forAllSystems (system:
-        let pkgs = import nixpkgs {
-          inherit system;
-        };
+      formatter = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+          };
         in
-          pkgs.nixfmt
-        );
+        pkgs.nixfmt
+      );
 
       homeConfigurations = {
         tjarratt = home-manager.lib.homeManagerConfiguration {
@@ -61,18 +66,18 @@
       };
 
       nixosConfigurations.styx = nixpkgs.lib.nixosSystem {
-      	modules = [
-      	  ./machines/styx/configuration.nix
+        modules = [
+          ./machines/styx/configuration.nix
 
-      	  home-manager.nixosModules.home-manager
-      	  { home-manager.users.tjarratt = import ./modules/home-manager/home.nix; }
-      	  { home-manager.users.tjarratt = import ./modules/home-manager/cli.nix; }
-      	  { home-manager.users.tjarratt = import ./modules/home-manager/git.nix; }
-      	  { home-manager.users.tjarratt = import ./modules/home-manager/ssh.nix; }
+          home-manager.nixosModules.home-manager
+          { home-manager.users.tjarratt = import ./modules/home-manager/home.nix; }
+          { home-manager.users.tjarratt = import ./modules/home-manager/cli.nix; }
+          { home-manager.users.tjarratt = import ./modules/home-manager/git.nix; }
+          { home-manager.users.tjarratt = import ./modules/home-manager/ssh.nix; }
 
           nixvim.nixosModules.nixvim
           ./modules/nvim/nixvim.nix
-      	];
+        ];
       };
     };
 }
