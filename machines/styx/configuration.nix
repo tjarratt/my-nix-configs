@@ -2,12 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
   ];
+
+  # Graphics
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -131,6 +137,20 @@
       "app.normany.enabled" = true;
     };
   };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  nixpkgs.config.allowUnfreePredicate = (
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-unwrapped"
+    ]
+  );
 
   environment.systemPackages = with pkgs; [
     git
