@@ -20,8 +20,7 @@
       };
       rust_analyzer.enable = true;
     };
-  };
 
-  # move to other file
-  # plugins.lsp.enable = true;
+    plugins.lsp.enable = true;
+  };
 }
