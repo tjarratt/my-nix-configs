@@ -14,7 +14,6 @@
         "K" = "hover";
         "<leader>k" = "signature_help";
         "<space>ca" = "code_action";
-        # TODO: WHAAAAAAAA really
         "<space>rn" = "rename";
       };
     };
