@@ -23,7 +23,18 @@
       nixvim,
       ...
     }@inputs:
+    let
+      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "amd64-darwin" ];
+    in
     {
+      formatter = forAllSystems (system:
+        let pkgs = import nixpkgs {
+          inherit system;
+        };
+        in
+          pkgs.nixfmt
+        );
+
       homeConfigurations = {
         tjarratt = home-manager.lib.homeManagerConfiguration {
           inherit nixpkgs;

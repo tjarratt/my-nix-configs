@@ -18,6 +18,7 @@
         inetutils
         lsof
         nil # language-server for nix
+        nixfmt
         pstree
         ripgrep
         tig
