@@ -94,6 +94,7 @@
       "wheel"
     ];
 
+    # TODO: delete and verify reboot is good
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -149,6 +150,7 @@
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-unwrapped"
+      "unrar" # for nixflix
     ]
   );
 

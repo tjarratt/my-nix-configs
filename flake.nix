@@ -94,6 +94,9 @@
 
           nixvim.nixosModules.nixvim
           ./modules/nvim/nixvim.nix
+
+          nixflix.nixosModules.default
+          ./modules/streaming.nix
         ];
       };
     };

@@ -45,6 +45,11 @@
     fsType = "ext4";
   };
 
+  fileSystems."/nixflix" = {
+    device = "/dev/disk/by-uuid/8f658817-bc17-471e-be34-83ca0d6d6f2b";
+    fsType = "ext4";
+  };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
