@@ -5,6 +5,13 @@
 }:
 
 {
+  sops = {
+    defaultSopsFile = ./../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    age.keyFile = "/home/tjarratt/.config/sops/age/keys.txt";
+  };
+
   home =
     let
       gitPlugins = pkgs.callPackage ./git-plugins.nix { };

@@ -14,7 +14,16 @@
     defaultSopsFile = ./../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
 
-    age.sshKeyPaths = [ "/home/tjarratt/.ssh/id_ed25519_nixflix" ];
-    age.keyFile = "/home/tjarratt/.config/sops/age/keys.txt";
+    # ensure sops can decrypt secrets at boot-time
+    # cannot use the files from /home for home-manager
+    # because /home is not mounted when the decryption runs
+    age = {
+      keyFile = "/var/lib/sops-nix/keys.txt";
+      generateKey = true;
+
+      sshKeyPaths = [
+        "/etc/ssh/ssh_host_ed25519_key"
+      ];
+    };
   };
 }

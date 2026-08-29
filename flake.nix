@@ -90,7 +90,7 @@
           {
             home-manager.users.tjarratt = {
               imports = [
-                inputs.sops-nix.homeManagerModules.sops
+                sops-nix.homeManagerModules.sops
                 ./modules/home-manager/home.nix
                 ./modules/home-manager/cli.nix
                 ./modules/home-manager/git.nix
