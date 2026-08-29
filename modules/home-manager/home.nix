@@ -25,6 +25,8 @@
         tig
         tldr
         tree
+        wl-clipboard
+
         gitPlugins.archaeology
         gitPlugins.praise
 
@@ -46,8 +48,10 @@
 
       shellAliases = {
         gst = "git status";
-
         vim = "nvim";
+
+        pbcopy = "wl-copy"; # old habits die hard...
+        pbpaste = "wl-paste";
       };
 
       file.".iex.exs".source = ./iex.exs;
