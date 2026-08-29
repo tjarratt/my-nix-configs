@@ -83,14 +83,21 @@
         modules = [
           ./machines/styx/configuration.nix
 
-          home-manager.nixosModules.home-manager
-          { home-manager.users.tjarratt = import ./modules/home-manager/home.nix; }
-          { home-manager.users.tjarratt = import ./modules/home-manager/cli.nix; }
-          { home-manager.users.tjarratt = import ./modules/home-manager/git.nix; }
-          { home-manager.users.tjarratt = import ./modules/home-manager/ssh.nix; }
-
           sops-nix.nixosModules.sops
           ./modules/secrets.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.tjarratt = {
+              imports = [
+                inputs.sops-nix.homeManagerModules.sops
+                ./modules/home-manager/home.nix
+                ./modules/home-manager/cli.nix
+                ./modules/home-manager/git.nix
+                ./modules/home-manager/ssh.nix
+              ];
+            };
+          }
 
           nixvim.nixosModules.nixvim
           ./modules/nvim/nixvim.nix
