@@ -38,8 +38,10 @@
         clippy
 
         _1password-gui
+        discord
         obsidian # a note a day ...
         signal-desktop
+        slack
       ];
 
       shellAliases = {
@@ -69,7 +71,9 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "1password"
+      "discord"
       "obsidian"
+      "slack"
     ]
   );
 
