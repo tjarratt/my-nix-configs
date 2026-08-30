@@ -5,7 +5,7 @@ defmodule Aphorisms do
     aphorism
   end
 
-  defp random_messages() do
+  defp random_message() do
     [
       "Dreams are messages from the deep.",
       #
@@ -38,4 +38,3 @@ IO.ANSI.white()
 |> Kernel.<>(IO.ANSI.reset())
 |> Kernel.<>(IO.ANSI.blink_slow())
 |> IO.puts()
-
