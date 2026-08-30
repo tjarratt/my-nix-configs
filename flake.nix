@@ -79,12 +79,14 @@
 
       nixosConfigurations.styx = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
 
         modules = [
           ./machines/styx/configuration.nix
 
-          sops-nix.nixosModules.sops
+          ./modules/nvim/nixvim.nix
           ./modules/secrets.nix
+          ./modules/streaming.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -98,12 +100,6 @@
               ];
             };
           }
-
-          nixvim.nixosModules.nixvim
-          ./modules/nvim/nixvim.nix
-
-          nixflix.nixosModules.default
-          ./modules/streaming.nix
         ];
       };
     };

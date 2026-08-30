@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   ...
 }:
 
@@ -7,6 +8,10 @@ let
   mediaDir = "/nixflix";
 in
 {
+  imports = [
+    inputs.nixflix.nixosModules.default
+  ];
+
   nixflix = {
     enable = true;
 

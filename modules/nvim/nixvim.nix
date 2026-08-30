@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   ...
 }:
@@ -47,6 +48,8 @@ in
   # nixvim ahoy hoy
 
   imports = [
+    inputs.nixvim.nixosModules.nixvim
+
     ./completion.nix
     ./format-on-save.nix
     ./keymaps.nix
