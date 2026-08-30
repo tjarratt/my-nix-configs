@@ -24,7 +24,9 @@
         departure-mono # mono-width terminal font
         file
         inetutils
+        inotify-tools # mix test.watch
         lsof
+        marp-cli
         nil # language-server for nix
         nixfmt
         pstree
