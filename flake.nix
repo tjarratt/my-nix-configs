@@ -88,18 +88,7 @@
           ./modules/secrets.nix
           ./modules/streaming.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.tjarratt = {
-              imports = [
-                sops-nix.homeManagerModules.sops
-                ./modules/home-manager/home.nix
-                ./modules/home-manager/cli.nix
-                ./modules/home-manager/git.nix
-                ./modules/home-manager/ssh.nix
-              ];
-            };
-          }
+          ./modules/home-manager
         ];
       };
     };
