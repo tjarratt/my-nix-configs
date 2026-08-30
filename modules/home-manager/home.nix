@@ -25,6 +25,7 @@
         file
         inetutils
         inotify-tools # mix test.watch
+        isd # fancy interactive systemd TUI
         lsof
         marp-cli
         nil # language-server for nix
