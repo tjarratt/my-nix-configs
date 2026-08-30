@@ -1,19 +1,19 @@
 defmodule Aphorisms do
   def one() do
     {aphorism, 0} = System.cmd("cowsay", random_message())
- 
-    aphorism 
+
+    aphorism
   end
 
   defp random_messages() do
     [
       "Dreams are messages from the deep.",
-      # 
+      #
       "You crazy for this one Rick ! It's your boy !",
       #
       "Heavy is the head that wears the crown.",
       "As above, so below.",
-      # 
+      #
       "Assigning responsibility lacks integrity",
       "Accepted responsibility is the foundation of integrity",
       #
