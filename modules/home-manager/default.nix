@@ -15,6 +15,7 @@
       ./home.nix
       ./cli.nix
       ./git.nix
+      ./sops.nix
       ./ssh.nix
     ];
   };
