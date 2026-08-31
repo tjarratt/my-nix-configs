@@ -1,10 +1,10 @@
 keys:
-  - &primary age14tp3mtwr87s4kpjqj2y94fcsynhpsch0adtu5380jzysgps6syqsxumqx9
+  - &user age14tp3mtwr87s4kpjqj2y94fcsynhpsch0adtu5380jzysgps6syqsxumqx9
   - &system age1zne3kjy20zy2f6hzff8aa6q9tptr27tr9dt2kxyh0km9fju7nayqqupprk
 
 creation_rules:
   - path_regex: secrets/secrets.yaml
     key_groups:
       - age:
-        - *primary
+        - *user
         - *system
