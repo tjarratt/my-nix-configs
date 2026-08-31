@@ -8,6 +8,30 @@
   programs = {
     fish.enable = true;
     home-manager.enable = true;
+    obsidian.enable = true;
+    obsidian.defaultSettings.hotkeys = {
+      "editor:toggle-fold" = [
+        {
+          modifiers = [ "Alt" ];
+          key = "T";
+        }
+      ];
+      "editor:fold-more" = [
+        {
+          modifiers = [ "Alt" ];
+          key = "F";
+        }
+      ];
+      "editor:fold-less" = [
+        {
+          modifiers = [
+            "Alt"
+            "Shift"
+          ];
+          key = "F";
+        }
+      ];
+    };
     zoxide.enable = true;
   };
 
@@ -51,7 +75,6 @@
 
         _1password-gui
         discord
-        obsidian # a note a day ...
         signal-desktop
         slack
       ];
