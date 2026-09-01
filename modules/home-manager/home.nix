@@ -64,9 +64,9 @@
         gitPlugins.archaeology
         gitPlugins.praise
 
-        erlang_28
-        beam28Packages.elixir_1_20
-        beam28Packages.elixir-ls
+        beamPackages.erlang
+        beamPackages.elixir
+        beamPackages.elixir-ls
 
         rustc
         cargo
@@ -109,6 +109,7 @@
     builtins.elem (lib.getName pkg) [
       "1password"
       "discord"
+      "discord-unwrapped"
       "obsidian"
       "slack"
     ]
