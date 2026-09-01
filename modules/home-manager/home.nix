@@ -22,6 +22,7 @@
         delta # for git diffs
         departure-mono # mono-width terminal font
         file
+        htop
         inetutils
         inotify-tools # mix test.watch
         isd # fancy interactive systemd TUI
