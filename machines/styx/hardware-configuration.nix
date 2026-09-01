@@ -54,4 +54,10 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # zsa moonlander and its layout customization tool
+  hardware.keyboard.zsa.enable = true;
+  environment.systemPackages = with pkgs; [
+    keymapp
+  ];
 }

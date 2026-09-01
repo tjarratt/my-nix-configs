@@ -138,6 +138,7 @@
   nixpkgs.config.allowUnfreePredicate = (
     pkg:
     builtins.elem (lib.getName pkg) [
+      "keymapp"
       "steam"
       "steam-unwrapped"
       "unrar" # for nixflix
