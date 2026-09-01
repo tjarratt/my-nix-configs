@@ -54,7 +54,41 @@ in
         apiKey._secret = config.sops.secrets."prowlarr/api_key".path;
         hostConfig.password._secret = config.sops.secrets."prowlarr/password".path;
         indexers = [
+          # nzbs ...
+          {
+            enable = true;
+            name = "NZBgeek";
+            apiKey._secret = config.sops.secrets."indexer-api-keys/NZBGeek".path;
+          }
 
+          # everything else
+          {
+            enable = true;
+            name = "Nyaa.si";
+            baseUrl = "https://nyaa.si/";
+            radarr_compatibility = true;
+            sonarr_compatibility = true;
+          }
+          {
+            enable = true;
+            name = "YTS";
+            baseUrl = "https://yts.bz/";
+          }
+          {
+            enable = true;
+            name = "The Pirate Bay";
+            baseUrl = "https://thepiratebay.org/";
+          }
+          {
+            enable = true;
+            name = "LimeTorrents";
+            baseUrl = "https://www.limetorrents.fun/";
+          }
+          {
+            enable = true;
+            name = "TorrentDownload";
+            baseUrl = "https://www.torrentdownload.info/";
+          }
         ];
       };
     };
@@ -70,7 +104,17 @@ in
         };
 
         servers = [
-
+          {
+            name = "Eweka";
+            host = "news.eweka.nl";
+            port = 563;
+            ssl = true;
+            username._secret = config.sops.secrets."usenet/eweka/username".path;
+            password._secret = config.sops.secrets."usenet/eweka/password".path;
+            connections = 50;
+            priority = 0;
+            retention = 3000;
+          }
         ];
       };
     };
@@ -119,5 +163,10 @@ in
     "sabnzbd/password" = { };
 
     "seerr/api_key" = { };
+
+    "usenet/eweka/username" = { };
+    "usenet/eweka/password" = { };
+
+    "indexer-api-keys/NZBGeek" = { };
   };
 }
