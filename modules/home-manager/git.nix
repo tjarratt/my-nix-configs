@@ -22,9 +22,7 @@
       push.autoSetupRemote = true;
       pull.rebase = true;
       merge.conflictStyle = "zdiff3";
-    };
 
-    extraConfig = {
       core.pager = "${pkgs.delta}/bin/delta";
       interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
 
@@ -41,8 +39,6 @@
         colorMoved = "plain";
         renames = true;
       };
-
-      commit.verbose = true;
     };
   };
 }
