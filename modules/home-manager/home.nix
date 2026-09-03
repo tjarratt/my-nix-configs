@@ -45,6 +45,7 @@
         cowsay # moo
         delta # for git diffs
         departure-mono # mono-width terminal font
+        dig
         file
         htop
         inetutils
