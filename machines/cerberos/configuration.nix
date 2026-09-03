@@ -8,10 +8,11 @@
 {
   imports = [
     ./hardware-configuration.nix
+
     ./pihole.nix
     ./isponsor-block.nix
-    ./bonjour.nix
     ./zram-swap.nix
+    ../../modules/bonjour.nix
   ];
 
   boot.loader.grub.enable = false;
