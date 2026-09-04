@@ -24,14 +24,20 @@
 
     wireless = {
       enable = true;
-      networks."MaisonEnRose" = {
-        psk = config.sops.secrets."wireless/password".path;
+      secretsFile = config.sops.secrets."wireless.env".path;
+      networks = {
+        "MaisonEnRose" = {
+          pskRaw = "ext:home_psk";
+        };
       };
     };
   };
 
   sops.secrets = {
-    "wireless/password" = { };
+    "wireless.env" = {
+      owner = config.users.users.wpa_supplicant.name;
+      group = config.users.users.wpa_supplicant.group;
+    };
   };
 
   nix.settings.experimental-features = [
