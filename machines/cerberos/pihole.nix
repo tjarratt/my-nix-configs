@@ -21,7 +21,12 @@
           "1.1.1.1"
         ];
 
-        dns.hosts = [ "192.168.0.61 cerberos.local" ];
+        dns.hosts = [
+          "192.168.0.61 cerberos.local" # do we need this ?
+
+          # https://kiriwalawren.github.io/nixflix/examples/basic-setup/#service-access
+          "jellyfin.nixflix styx.local"
+        ];
       };
     };
 
