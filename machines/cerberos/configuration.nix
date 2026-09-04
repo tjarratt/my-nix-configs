@@ -8,10 +8,12 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules/secrets.nix
+    ../../modules/bonjour.nix
+
     ./pihole.nix
     ./isponsor-block.nix
     ./zram-swap.nix
-    ../../modules/bonjour.nix
   ];
 
   boot.loader.grub.enable = false;
@@ -23,7 +25,7 @@
     wireless = {
       enable = true;
       networks."MaisonEnRose" = {
-        psk._secret = config.sops.secrets."wireless/password";
+        psk = config.sops.secrets."wireless/password".path;
       };
     };
   };
@@ -35,6 +37,10 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+  ];
+  nix.settings.trusted-users = [
+    "root"
+    "tjarratt"
   ];
 
   time.timeZone = "Europe/Paris";

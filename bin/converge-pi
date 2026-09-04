@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+nixos-rebuild \
+  switch \
+  -j auto \
+  --elevate=sudo \
+  --ask-elevate-password \
+  --target-host cerberos.local \
+  --no-reexec \
+  --flake \
+  ".#cerberos"
+

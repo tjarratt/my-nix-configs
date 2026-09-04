@@ -18,6 +18,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ]; # cross-compile to the raspberry-pi
 
   networking.hostName = "styx";
 

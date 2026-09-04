@@ -73,6 +73,8 @@
 
       nixosConfigurations.cerberos = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
+        specialArgs = { inherit inputs; };
+
         modules = [
           ./machines/cerberos/configuration.nix
         ];
