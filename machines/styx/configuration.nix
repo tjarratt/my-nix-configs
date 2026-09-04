@@ -7,6 +7,12 @@
 {
   imports = [
     ./hardware-configuration.nix
+
+    ../../modules/bonjour.nix
+    ../../modules/home-manager
+    ../../modules/nvim/nixvim.nix
+    ../../modules/secrets.nix
+    ../../modules/streaming.nix
   ];
 
   # Graphics

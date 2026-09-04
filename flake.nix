@@ -86,13 +86,6 @@
 
         modules = [
           ./machines/styx/configuration.nix
-
-          ./modules/bonjour.nix
-          ./modules/nvim/nixvim.nix
-          ./modules/secrets.nix
-          ./modules/streaming.nix
-
-          ./modules/home-manager
         ];
       };
     };
