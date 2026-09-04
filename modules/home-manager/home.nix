@@ -42,6 +42,7 @@
     {
       packages = with pkgs; [
         bat # fancy alternative for cat
+        btop # visualize cpu temp, network usage, and more
         cowsay # moo
         delta # for git diffs
         departure-mono # mono-width terminal font
