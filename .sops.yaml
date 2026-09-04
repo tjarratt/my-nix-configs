@@ -1,10 +1,13 @@
 keys:
-  - &user age14tp3mtwr87s4kpjqj2y94fcsynhpsch0adtu5380jzysgps6syqsxumqx9
-  - &system age1zne3kjy20zy2f6hzff8aa6q9tptr27tr9dt2kxyh0km9fju7nayqqupprk
+  - &styx-user age14tp3mtwr87s4kpjqj2y94fcsynhpsch0adtu5380jzysgps6syqsxumqx9
+  - &styx-system age1zne3kjy20zy2f6hzff8aa6q9tptr27tr9dt2kxyh0km9fju7nayqqupprk
+  - &cerberos age1rqdth90sqewem6rlva0mamve7jfhy7870ksmtnxd7x8p868723hqrtkweg
 
 creation_rules:
   - path_regex: secrets/secrets.yaml
     key_groups:
       - age:
-        - *user
-        - *system
+        - *styx-user
+        - *styx-system
+        - *cerberos
+
