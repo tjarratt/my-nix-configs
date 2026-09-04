@@ -72,6 +72,7 @@
       };
 
       nixosConfigurations.cerberos = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
         modules = [
           ./machines/cerberos/configuration.nix
         ];

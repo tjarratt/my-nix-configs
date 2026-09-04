@@ -1,4 +1,3 @@
-{ lib, ... }:
 {
   networking.firewall.allowedTCPPorts = [ 80 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
@@ -22,7 +21,7 @@
           "1.1.1.1"
         ];
 
-        dns.hosts = [ "192.168.0.33 cerberos.local" ];
+        dns.hosts = [ "192.168.0.61 cerberos.local" ];
       };
     };
 
