@@ -24,7 +24,8 @@
         dns.hosts = [
           # nixflix entries
           # https://kiriwalawren.github.io/nixflix/examples/basic-setup/#service-access
-          "jellyfin.nixflix styx.local"
+          "192.168.0.29 jellyfin.nixflix"
+          "192.168.0.29 seerr.nixflix"
         ];
       };
     };
