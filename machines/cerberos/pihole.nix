@@ -22,8 +22,7 @@
         ];
 
         dns.hosts = [
-          "192.168.0.61 cerberos.local" # do we need this ?
-
+          # nixflix entries
           # https://kiriwalawren.github.io/nixflix/examples/basic-setup/#service-access
           "jellyfin.nixflix styx.local"
         ];
