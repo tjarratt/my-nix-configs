@@ -20,8 +20,8 @@
     defaultSopsFormat = "yaml";
 
     # ensure sops can decrypt secrets at boot-time
-    # cannot use the files from /home for home-manager
-    # because /home is not mounted when the decryption runs
+    # we cannot use the files from /home for home-manager
+    # because /home is not guaranteed to be mounted when the decryption occurs
     age = {
       keyFile = "/var/lib/sops-nix/keys.txt";
       generateKey = true;
