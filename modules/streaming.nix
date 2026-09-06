@@ -12,6 +12,10 @@ in
     inputs.nixflix.nixosModules.default
   ];
 
+  networking.firewall.allowedTCPPorts = [
+    8096
+  ];
+
   nixflix = {
     enable = true;
 
@@ -19,8 +23,8 @@ in
     stateDir = "${mediaDir}/.state";
     mediaUsers = [ "tjarratt" ];
 
-    caddy.enable = true;
-    caddy.addHostsEntries = true;
+    # caddy.enable = true;
+    # caddy.addHostsEntries = true;
 
     postgres.enable = true;
 
@@ -121,6 +125,7 @@ in
 
     jellyfin = {
       enable = true;
+      openFirewall = true;
       apiKey._secret = config.sops.secrets."jellyfin/api_key".path;
 
       users.admin = {
