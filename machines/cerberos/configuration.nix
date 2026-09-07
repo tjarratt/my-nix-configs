@@ -13,6 +13,7 @@
 
     ./pihole.nix
     ./isponsor-block.nix
+    ./shutdown-at-night.nix
     ./zram-swap.nix
   ];
 
