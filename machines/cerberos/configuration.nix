@@ -8,8 +8,9 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/secrets.nix
     ../../modules/bonjour.nix
+    ../../modules/gc.nix
+    ../../modules/secrets.nix
 
     ./pihole.nix
     ./isponsor-block.nix

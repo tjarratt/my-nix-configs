@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
 
     ../../modules/bonjour.nix
+    ../../modules/gc.nix
     ../../modules/home-manager
     ../../modules/nvim/nixvim.nix
     ../../modules/secrets.nix
