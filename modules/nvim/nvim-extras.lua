@@ -50,7 +50,7 @@ local function insert_related()
   elseif current_filepath:match('^test/') then
     related_path = current_filepath
         :gsub('^test/', 'lib/')
-        :gsub('_test%.exs%', '.ex')
+        :gsub('_test%.exs$', '.ex')
   else
     related_path = current_filepath
   end
