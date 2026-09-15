@@ -88,9 +88,9 @@
       "wheel"
     ];
 
-    # TODO: delete and verify reboot is good
     packages = with pkgs; [
-      kdePackages.kate
+      kdePackages.kate # TODO: delete and verify reboot is good
+      hunspellDicts.en-us-large
     ];
 
     shell = pkgs.fish;

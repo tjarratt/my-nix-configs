@@ -45,12 +45,12 @@ local function insert_related()
   local related_path
   if current_filepath:match('^lib/') then
     related_path = current_filepath
-      :gsub('^lib/', 'test/')
-      :gsub('%.exs?$', '_test.exs')
+        :gsub('^lib/', 'test/')
+        :gsub('%.exs?$', '_test.exs')
   elseif current_filepath:match('^test/') then
     related_path = current_filepath
-      :gsub('^test/', 'lib/')
-      :gsub('_test%.exs%', '.ex')
+        :gsub('^test/', 'lib/')
+        :gsub('_test%.exs%', '.ex')
   else
     related_path = current_filepath
   end
@@ -84,9 +84,14 @@ math.randomseed(os.time())
 local vanilla_dictionary = {}
 local function load_vanilla_dictionary()
   if #vanilla_dictionary == 0 then
-    local file = io:open("/usr/share/dict/words", "r")
+    local handle = io.popen("nix eval nixpkgs#hunspellDicts.en-us-large.outPath --raw")
+    local hunspell_path = handle:read("*a"):gsub("\n", "")
+    local dict_path = hunspell_path .. "/share/hunspell/en_US.dic"
+
+    local file = io.open(dict_path, "r")
     for line in file:lines() do
-      table.insert(vanilla_dictionary, line)
+      local word = line:gsub("/.*$", "")
+      table.insert(vanilla_dictionary, word)
     end
     file:close()
   end
@@ -163,4 +168,3 @@ vim.api.nvim_set_keymap('n', '<leader>aw', '<cmd>AerialToggle!<cr>', { noremap =
 -- ==============================
 
 vim.cmd('autocmd BufLeave,FocusLost * silent! update')
-
