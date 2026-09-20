@@ -48,6 +48,7 @@
         departure-mono # mono-width terminal font
         dig
         file
+        gnumake
         htop
         inetutils
         inotify-tools # mix test.watch
