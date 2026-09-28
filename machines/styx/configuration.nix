@@ -154,6 +154,10 @@
     vim
   ];
 
+  environment.sessionVariables = {
+    "ERL_AFLAGS" = "-kernel shell_history enabled shell_history_file_bytes 1024000";
+  };
+
   services.postgresql = {
     enable = true;
     ensureUsers = [
