@@ -5,12 +5,15 @@
     nssmdns4 = true;
     openFirewall = true;
 
-    publish = {
-      domain = true;
-      enable = true;
-      addresses = true;
-    };
+    settings = {
+      reflector.enable-reflector = true;
 
-    reflector = true;
+      publish = {
+        publish-domain = true;
+        publish-addresses = true;
+
+        disable-publishing = false;
+      };
+    };
   };
 }
