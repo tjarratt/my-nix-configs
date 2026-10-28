@@ -16,9 +16,6 @@
     ./isponsor-block.nix
     ./shutdown-at-night.nix
     ./zram-swap.nix
-
-    # oct-21 : until next nixpkgs update
-    ../../modules/temp-patch-leaked-certificate-authorities.nix
   ];
 
   boot.loader.grub.enable = false;

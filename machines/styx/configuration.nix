@@ -14,9 +14,6 @@
     ../../modules/nvim/nixvim.nix
     ../../modules/secrets.nix
     ../../modules/streaming.nix
-
-    # oct-21 : until next nixpkgs update
-    ../../modules/temp-patch-leaked-certificate-authorities.nix
   ];
 
   # Graphics
